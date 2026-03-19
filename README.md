@@ -27,4 +27,4 @@ Before running these projects, ensure you have:
     docker build -t student-a-app .
 3. Run the Container: This command runs the container and links your current folder `(${PWD})` to the container's `/app` folder so the generated graphs are saved to your laptop.
     ```bash
-    docker run -v "${PWD}:/app" student-a-app
+    docker run -v "${PWD}:/app" student-a-apps
