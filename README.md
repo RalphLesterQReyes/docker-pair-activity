@@ -3,15 +3,15 @@
 This repository demonstrates the **portability** of Docker by containerizing two different Python-based data analysis projects. 
 
 ## 👥 Authors
-* **Student A:** [Your Name] - Topic: Sales Performance Analysis
-* **Student B:** [Partner's Name] - Topic: [Partner's Topic Name]
+* **Student A:** Ralph Lester Reyes - Topic: Sales Performance Analysis
+* **Student B:** Christian Licuanan - Topic: [Partner's Topic Name]
 
 ---
 
 ## 🛠 Prerequisites
 Before running these projects, ensure you have:
 1. **Docker Desktop** installed and running.
-2. **WSL 2** enabled (for Windows users like Huawei D15).
+2. **WSL 2** enabled
 3. **VS Code** (recommended).
 
 ---
