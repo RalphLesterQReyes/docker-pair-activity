@@ -12,6 +12,7 @@ def load_and_clean_data(file_path):
     df = pd.read_csv(file_path)
     df['Hour'] = pd.to_datetime(df['Time']).dt.hour
     df.columns = df.columns.str.strip()
+    # Keeping your original subset list exactly as requested
     df = df.dropna(subset=['Total', 'Rating', 'Product lin', 'Customer', 'Payment'])
     
     return df
@@ -33,6 +34,7 @@ def analytics_graphs(df):
     plt.title('1. Store Traffic: Peak Sales Hours', fontsize=14, fontweight='bold')
     plt.xticks(range(10, 21))
     plt.savefig('output/1_peak_hours.png', dpi=300, bbox_inches='tight')
+    plt.close() # Added to free memory
 
     # --- GRAPH 2: Category King (Horizontal Bar) ---
     plt.figure(figsize=(10, 6))
@@ -41,6 +43,7 @@ def analytics_graphs(df):
     plt.title('2. Revenue by Product Category', fontsize=14, fontweight='bold')
     sns.despine(left=True, bottom=True)
     plt.savefig('output/2_product_performance.png', dpi=300, bbox_inches='tight')
+    plt.close()
 
     # --- GRAPH 3: Member vs. Normal (Grouped Bar) ---
     plt.figure(figsize=(10, 6))
@@ -48,6 +51,7 @@ def analytics_graphs(df):
     plt.title('3. Member vs. Normal Spending by Branch', fontsize=14, fontweight='bold')
     plt.legend(title='Customer Status', frameon=True)
     plt.savefig('output/3_customer_loyalty.png', dpi=300, bbox_inches='tight')
+    plt.close()
 
     # --- NEW GRAPH 4: Payment Method ---
     plt.figure(figsize=(8, 8))
@@ -59,6 +63,7 @@ def analytics_graphs(df):
     plt.gca().add_artist(centre_circle)
     plt.title('4. Most Popular Payment Methods', fontsize=14, fontweight='bold', pad=15)
     plt.savefig('output/4_payment_donut.png', dpi=300, bbox_inches='tight')
+    plt.close()
 
     # --- GRAPH 5: City Rivalry (KDE Density Plot) ---
     plt.figure(figsize=(10, 6))
@@ -67,8 +72,18 @@ def analytics_graphs(df):
     plt.xlabel('Sale Amount (Total)')
     plt.ylabel('Density of Sales')
     plt.savefig('output/5_city_sales_density.png', dpi=300, bbox_inches='tight')
+    plt.close()
 
     print("✅ Success! Your 5 unique business insights are ready.")
+
+    # --- DOCKER PROOF SECTION (Added for your terminal screenshot) ---
+    print("\n--- DOCKER CONTAINER IMAGE CHECK ---")
+    if os.path.exists('output'):
+        files = os.listdir('output')
+        print(f"Verified: {len(files)} images found in the output directory:")
+        for i, file in enumerate(sorted(files), 1):
+            print(f" [{i}] {file}")
+    print("--------------------------------------\n")
 
 if __name__ == "__main__":
     try:
