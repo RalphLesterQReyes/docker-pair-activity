@@ -15,19 +15,25 @@ Before running these projects, ensure you have:
 3. **VS Code** (recommended).
 
 ---
-## Github
-1. Before you start coding make sure to create new branch.
----
+## 🛠 Instructions for Student B (Christian)
 
-## 🚀 How to Run the Projects
+### 1. Clone the Repository
+* Open **GitHub Desktop**.
+* Go to `File > Clone Repository` and select `docker-pair-activity`.
+* Choose a local path on your laptop to save the files.
 
-### 📂 Running Student A (Sales Analysis)
-1. Open your terminal and navigate to the folder:
+### 2. Create Your Feature Branch
+*In GitHub Desktop, before adding any code:*
+* Click the **Current Branch** button (top center).
+* Click **New Branch** and name it `feature-student-b`.
+* Click **Publish Branch** to sync it with GitHub.
+
+### 3. Run Student A's Analysis (Portability Test)
+*To prove Docker works, run my code on your machine:*
+1. Open the project in **VS Code**.
+2. Open the terminal (Ctrl + `) and run:
    ```bash
    cd student-a-sales
-2. Build the Docker Image: This command creates the image named `student-a-app` based on our Dockerfile.
-    ```bash
-    docker build -t student-a-app .
-3. Run the Container: This command runs the container and links your current folder `(${PWD})` to the container's `/app` folder so the generated graphs are saved to your laptop.
-    ```bash
-    docker run -v "${PWD}:/app" student-a-apps
+   docker build -t student-a-app .
+   docker run -v "${PWD}:/app" student-a-app
+---
