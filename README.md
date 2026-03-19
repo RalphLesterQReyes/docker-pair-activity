@@ -10,7 +10,7 @@ This repository demonstrates the **portability** of Docker by containerizing two
 
 ## 🛠 Prerequisites
 Before running these projects, ensure you have:
-1 **Docker Desktop** installed and running.
+1. **Docker Desktop** installed and running.
 2. **WSL 2** enabled
 3. **VS Code** (recommended).
 
