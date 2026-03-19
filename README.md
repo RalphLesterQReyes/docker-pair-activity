@@ -15,7 +15,6 @@ Before running these projects, ensure you have:
 3. **VS Code** (Recommended).
 
 ---
-## 🛠 Instructions for Student B (Christian)
 
 ## 🛠 Instructions for Student B (Christian)
 
